@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    // General
+    "jsx": "preserve",
+    "jsxImportSource": "@solidjs/web",
+    "target": "ESNext",
+
+    // Modules
+    "allowImportingTsExtensions": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+
+    // Type Checking & Safety
+    "strict": true,
+    "skipLibCheck": true,
+    "types": ["vite/client"],
+    "paths": {
+      "@solid-slopkit/i18n": ["../../packages/i18n/src/runtime/index.ts"],
+      "@solid-slopkit/i18n/vite": ["../../packages/i18n/src/vite.ts"]
+    },
+
+    // Translation files: the i18n plugin writes their types outside src
+    "allowArbitraryExtensions": true,
+    "rootDirs": ["src", "node_modules/.slopkit-i18n/types/src"]
+  },
+  "include": ["src", "*.ts", "file-routes.d.ts"]
+}
