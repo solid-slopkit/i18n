@@ -2,7 +2,7 @@
 
 [`@solid-slopkit/i18n`](./packages/i18n): internationalization for SolidJS 2.x. Translation files live next to the components that use them, and a Vite plugin compiles each into typed messages of the active locale.
 
-[`apps/docs`](./apps/docs) is the documentation site, published at https://solid-slopkit.github.io/i18n/. [CONTEXT-MAP.md](./CONTEXT-MAP.md) explains how the package relates to the other `@solid-slopkit` packages, and [AGENTS.md](./AGENTS.md) is the guide for coding agents.
+[`apps/docs`](./apps/docs) is the documentation site, published at https://solid-slopkit.github.io/i18n/. [packages/i18n/CONTEXT.md](./packages/i18n/CONTEXT.md) holds the vocabulary, [packages/i18n/docs/adr](./packages/i18n/docs/adr) the decisions, and [AGENTS.md](./AGENTS.md) is the guide for coding agents.
 
 ## Installing
 

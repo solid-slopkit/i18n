@@ -81,7 +81,7 @@ Pick the newest router version whose peer range accepts the target rc, not just 
 
 This repo is part of the `@solid-slopkit` family:
 
-- **`@solid-slopkit/components`.** The docs app use the published version, and it has its own Solid peer range. That range must accept the target rc: `npm view @solid-slopkit/components@<installed version> peerDependencies`. If it doesn't, a newer components release is needed first; tell the user instead of forcing it. `pnpm-workspace.yaml` exempts `@solid-slopkit/components@0.1.0` from the release-age policy, so moving to a newer components version means updating that entry too.
+- **`@solid-slopkit/components`.** The docs app uses the published version, and it has its own Solid peer range. That range must accept the target rc: `npm view @solid-slopkit/components@<installed version> peerDependencies`. If it doesn't, a newer components release is needed first; tell the user instead of forcing it. `pnpm-workspace.yaml` exempts `@solid-slopkit/components@0.1.0` from the release-age policy, so moving to a newer components version means updating that entry too.
 - **The vite plugin and compiler.** `src/vite.ts` and `src/compile` run inside `@solidjs/vite-plugin`, which brings `@solidjs/compiler` and `@solidjs/babel-plugin`. Compiler changes in the notes (JSX output, SSR holes, attribute handling) reach the plugin's tests (`vite.test.ts`, `vite.build.test.ts`, the `compile` project) even when the runtime doesn't change.
 
 ## 4. Bump

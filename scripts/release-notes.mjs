@@ -1,4 +1,4 @@
-// Prints the GitHub Release notes for the shared version (ADR 0001): each package's section of its CHANGELOG.md, which
+// Prints the GitHub Release notes for the version (ADR 0001): each package's section of its CHANGELOG.md, which
 // `pnpm changeset version` wrote. Packages with nothing new in this version are left out.
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';

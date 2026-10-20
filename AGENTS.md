@@ -30,13 +30,19 @@ Use these whenever you are debugging reactivity (something doesn't update, updat
 
 Name your signals/memos/effects (the `{ name: "..." }` option) — attribution reports scopes by name.
 
-## Roadmap, decisions and vocabulary
+## Repository layout
+
+This repository holds one package and its docs site:
+
+- `packages/i18n`: `@solid-slopkit/i18n`, the published package.
+- `apps/docs`: the documentation site. It uses the package from source, and `@solid-slopkit/components` from npm.
+
+## Decisions and vocabulary
 
 Read only what your task touches:
 
-- `CONTEXT-MAP.md`: how this package relates to the other `@solid-slopkit` packages, the terms they share, and where repo-wide decisions are. Start here.
-- `packages/i18n/CONTEXT.md`: the package's vocabulary. Use its terms in code, docs and replies.
-- `packages/i18n/docs/adr/` and `docs/adr/`: architecture decisions for the package and for the whole family. Read the relevant ones before designing something, and don't silently go against one.
+- `packages/i18n/CONTEXT.md`: the package's vocabulary, and how it meets `@solid-slopkit/components`. Use its terms in code, docs and replies.
+- `packages/i18n/docs/adr/`: architecture decisions. Read the relevant ones before designing something, and don't silently go against one. A new ADR goes here, numbered after the highest one.
 
 ## This library stands alone
 

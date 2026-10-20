@@ -2,6 +2,10 @@
 
 `@solid-slopkit/*` packages are published to the public npm registry under the `@solid-slopkit` scope, and consumers install them by name (`pnpm add @solid-slopkit/components`). Every package is released together under one version: a tag `v<version>` (e.g. `v0.2.0`) starts the release workflow, which builds each package, publishes it to npm from its folder, and creates a GitHub Release whose notes are the changelog sections. Changesets keeps the versions in step (a `fixed` group in `.changeset/config.json`) and writes each package's changelog. The workflow authenticates to npm with trusted publishing (GitHub OIDC), so the repo holds no npm token. The published package contains `.jsx` with JSX preserved, plus `.d.ts` declarations, both emitted by `tsc`. It is exposed through the `solid` export condition, so the consumer's Solid plugin compiles the components for its own targets (server, client, dev). We ship no per-target builds.
 
+## Update (2026-10-19): one package per repository, one version per package
+
+The lockstep part above no longer holds. Each `@solid-slopkit/*` package now has its own repository and its own version, so `@solid-slopkit/i18n` is released alone: a `v<version>` tag in this repository is i18n's version, and the release workflow publishes only it. Changesets has no `fixed` group anymore. This is the "release per package" option below, which separate repositories bring back; a consumer using several packages now picks each one's version from its own peer ranges, as with any npm dependencies. Everything else stands: npm under the `@solid-slopkit` scope, the tag-started workflow with trusted publishing, a GitHub Release with the changelog section as notes, and uncompiled JSX under the `solid` condition.
+
 ## Considered Options
 
 - **Raw `.ts`/`.tsx` with `exports` pointing at `src`.** Rejected: `skipLibCheck` does not cover `.ts` files, so consumers would type-check the library source under their own compiler options. Stricter settings would then fail inside `@solid-slopkit/components`.
